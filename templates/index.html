@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scopus Journal Search by iLovePhD.com</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 40px 0;
+        }
+
+        .header h1 {
+            color: white;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+
+        .search-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            padding: 40px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .search-box {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 20px 60px 20px 25px;
+            font-size: 1.1rem;
+            border: 2px solid #e1e5e9;
+            border-radius: 15px;
+            outline: none;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .search-input:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .search-btn:hover {
+            transform: translateY(-50%) scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .search-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: translateY(-50%);
+        }
+
+        .advanced-options {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .option-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .option-group label {
+            font-weight: 500;
+            color: #666;
+        }
+
+        .option-input {
+            padding: 8px 12px;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .option-input:focus {
+            border-color: #667eea;
+        }
+
+        .advanced-btn {
+            background: linear-gradient(135deg, #f8f9fc 0%, #e8ecf7 100%);
+            color: #667eea;
+            border: 2px solid rgba(102, 126, 234, 0.2);
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .advanced-btn:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .suggestions {
+            margin-bottom: 20px;
+        }
+
+        .suggestions h3 {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .suggestion-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .suggestion-tag {
+            background: linear-gradient(135deg, #f8f9fc 0%, #e8ecf7 100%);
+            color: #667eea;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+        }
+
+        .suggestion-tag:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .stats-panel {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .results-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin-bottom: 30px;
+            display: none;
+        }
+
+        .results-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px 30px;
+        }
+
+        .results-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .results-meta {
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+
+        .results-list {
+            max-height: 600px;
+            overflow-y: auto;
+        }
+
+        .result-item {
+            padding: 25px 30px;
+            border-bottom: 1px solid #f0f2f5;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .result-item:hover {
+            background: #f8f9fc;
+            transform: translateX(5px);
+        }
+
+        .result-item:last-child {
+            border-bottom: none;
+        }
+
+        .result-item.expanded {
+            background: #f8fdff;
+            border-left: 4px solid #667eea;
+        }
+
+        .result-description {
+            margin-top: 15px;
+            padding: 15px;
+            background: #f0f4ff;
+            border-radius: 8px;
+            border-left: 3px solid #667eea;
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .result-description.show {
+            display: block;
+        }
+
+        .result-description p {
+            margin: 0;
+            line-height: 1.6;
+            color: #2d3748;
+            font-style: italic;
+        }
+
+        .expand-icon {
+            position: absolute;
+            top: 25px;
+            right: 30px;
+            color: #667eea;
+            font-size: 18px;
+            transition: transform 0.3s ease;
+        }
+
+        .result-item.expanded .expand-icon {
+            transform: rotate(180deg);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-left: 8px;
+        }
+
+        .status-active {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-inactive {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .result-header {
+            display: flex;
+            justify-content: between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .result-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+
+
+        .result-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .meta-icon {
+            color: #667eea;
+            width: 16px;
+        }
+
+        .result-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .result-tag {
+            background: #f0f2f5;
+            color: #666;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 15px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .error {
+            background: #fee;
+            color: #c53030;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #c53030;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 60px 30px;
+            color: #666;
+        }
+
+        .no-results i {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #ccc;
+        }
+
+        /* Modal Styles */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 15px;
+            padding: 0;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 25px;
+            border-radius: 15px 15px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background 0.3s ease;
+        }
+
+        .close-btn:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .modal-body {
+            padding: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px 15px;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .form-group small {
+            display: block;
+            margin-top: 5px;
+            color: #666;
+            font-size: 12px;
+        }
+
+        .modal-footer {
+            padding: 20px 25px;
+            border-top: 1px solid #e1e5e9;
+            display: flex;
+            gap: 15px;
+            justify-content: flex-end;
+        }
+
+        .btn-primary,
+        .btn-secondary {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: #f8f9fc;
+            color: #666;
+            border: 1px solid #e1e5e9;
+        }
+
+        .btn-secondary:hover {
+            background: #e8ecf7;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .search-container {
+                padding: 25px;
+            }
+            
+            .advanced-options {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .result-meta {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-content {
+                width: 95%;
+                margin: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-graduation-cap"></i> Scopus Journal Search</h1>
+            <p>Discover academic journals with natural language processing | <strong>iLovePhD.com</strong></p>
+        </div>
+
+        <div class="stats-panel" id="statsPanel">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" id="totalJournals">-</div>
+                    <div class="stat-label">Total Journals</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="totalFeatures">-</div>
+                    <div class="stat-label">Search Features</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="indexSize">-</div>
+                    <div class="stat-label">Index Size (MB)</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="search-container">
+            <div class="search-box">
+                <input 
+                    type="text" 
+                    class="search-input" 
+                    id="searchInput" 
+                    placeholder="Search for journals by topic or ISSN (e.g., 'computer science AI', '1234-5678', 'medical research')..."
+                    autocomplete="off"
+                >
+                <button class="search-btn" id="searchBtn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
+            <div class="advanced-options">
+                <div class="option-group">
+                    <label for="maxResults">Max Results:</label>
+                    <select class="option-input" id="maxResults">
+                        <option value="10">10</option>
+                        <option value="20" selected>20</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                    </select>
+                </div>
+                <div class="option-group">
+                    <label for="minScore">Min Score:</label>
+                    <select class="option-input" id="minScore">
+                        <option value="0.05">0.05</option>
+                        <option value="0.1" selected>0.1</option>
+                        <option value="0.2">0.2</option>
+                        <option value="0.3">0.3</option>
+                    </select>
+                </div>
+                <div class="option-group">
+                    <button class="advanced-btn" onclick="openAdvancedSearch()">
+                        <i class="fas fa-sliders-h"></i> Advanced Filters
+                    </button>
+                </div>
+            </div>
+
+            <div class="suggestions">
+                <h3><i class="fas fa-lightbulb"></i> Popular Search Topics</h3>
+                <div class="suggestion-tags" id="suggestionTags">
+                    <!-- Suggestions will be loaded here -->
+                </div>
+            </div>
+        </div>
+
+        <div class="results-container" id="resultsContainer">
+            <div class="results-header">
+                <div class="results-title" id="resultsTitle">Search Results</div>
+                <div class="results-meta" id="resultsMeta"></div>
+            </div>
+            <div class="results-list" id="resultsList">
+                <!-- Results will be displayed here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Advanced Search Modal -->
+    <div class="modal" id="advancedSearchModal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-cogs"></i> Advanced Search Filters</h3>
+                <button class="close-btn" onclick="closeAdvancedSearch()">&times;</button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Publisher Filter:</label>
+                    <input type="text" id="publisherFilter" placeholder="e.g., Elsevier, Springer, IEEE">
+                </div>
+                
+                <div class="form-group">
+                    <label>Journal Type:</label>
+                    <select id="typeFilter">
+                        <option value="">All Types</option>
+                        <option value="Journal">Journal</option>
+                        <option value="Book Series">Book Series</option>
+                        <option value="Conference Proceeding">Conference Proceeding</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Open Access:</label>
+                    <select id="openAccessFilter">
+                        <option value="">Any</option>
+                        <option value="Full">Full Open Access</option>
+                        <option value="Hybrid">Hybrid</option>
+                        <option value="Subscription">Subscription Only</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Subject Area Codes (ASJC):</label>
+                    <input type="text" id="subjectFilter" placeholder="e.g., 1702, 1712 (comma-separated)">
+                    <small>Common codes: 1702 (AI), 1712 (Software), 2718 (Medicine)</small>
+                </div>
+                
+                <div class="form-group">
+                    <label>Language:</label>
+                    <select id="languageFilter">
+                        <option value="">Any Language</option>
+                        <option value="eng">English</option>
+                        <option value="spa">Spanish</option>
+                        <option value="fre">French</option>
+                        <option value="ger">German</option>
+                        <option value="chi">Chinese</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="clearAdvancedFilters()">Clear All</button>
+                <button class="btn-primary" onclick="applyAdvancedSearch()">Apply Filters</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        class ScopusSearch {
+            constructor() {
+                this.searchInput = document.getElementById('searchInput');
+                this.searchBtn = document.getElementById('searchBtn');
+                this.resultsContainer = document.getElementById('resultsContainer');
+                this.resultsList = document.getElementById('resultsList');
+                this.resultsTitle = document.getElementById('resultsTitle');
+                this.resultsMeta = document.getElementById('resultsMeta');
+                this.suggestionTags = document.getElementById('suggestionTags');
+                this.advancedFilters = {};
+                
+                this.initializeEventListeners();
+                this.loadStats();
+                this.loadSuggestions();
+            }
+
+            initializeEventListeners() {
+                this.searchBtn.addEventListener('click', () => this.performSearch());
+                this.searchInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') this.performSearch();
+                });
+            }
+
+            async loadStats() {
+                try {
+                    const response = await fetch('/stats');
+                    const data = await response.json();
+                    
+                    if (data.error) {
+                        console.error('Stats error:', data.error);
+                        return;
+                    }
+
+                    document.getElementById('totalJournals').textContent = data.total_journals.toLocaleString();
+                    document.getElementById('totalFeatures').textContent = data.total_features.toLocaleString();
+                    document.getElementById('indexSize').textContent = data.index_size_mb;
+                } catch (error) {
+                    console.error('Error loading stats:', error);
+                }
+            }
+
+            async loadSuggestions() {
+                try {
+                    const response = await fetch('/suggestions');
+                    const data = await response.json();
+                    
+                    data.suggestions.forEach(suggestion => {
+                        const tag = document.createElement('div');
+                        tag.className = 'suggestion-tag';
+                        tag.textContent = suggestion;
+                        tag.addEventListener('click', () => {
+                            this.searchInput.value = suggestion;
+                            this.performSearch();
+                        });
+                        this.suggestionTags.appendChild(tag);
+                    });
+                } catch (error) {
+                    console.error('Error loading suggestions:', error);
+                }
+            }
+
+            async performSearch() {
+                const query = this.searchInput.value.trim();
+                if (!query) {
+                    alert('Please enter a search query');
+                    return;
+                }
+
+                const maxResults = document.getElementById('maxResults').value;
+                const minScore = document.getElementById('minScore').value;
+
+                this.showLoading();
+                this.searchBtn.disabled = true;
+
+                try {
+                    const response = await fetch('/search', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            query: query,
+                            top_k: parseInt(maxResults),
+                            min_score: parseFloat(minScore),
+                            filters: this.advancedFilters
+                        })
+                    });
+
+                    const data = await response.json();
+
+                    if (data.error) {
+                        this.showError(data.error);
+                        return;
+                    }
+
+                    this.displayResults(data);
+
+                } catch (error) {
+                    this.showError('Network error: ' + error.message);
+                } finally {
+                    this.searchBtn.disabled = false;
+                }
+            }
+
+            showLoading() {
+                this.resultsContainer.style.display = 'block';
+                this.resultsTitle.textContent = 'Searching...';
+                this.resultsMeta.textContent = '';
+                this.resultsList.innerHTML = `
+                    <div class="loading">
+                        <div class="spinner"></div>
+                        <div>Searching through ${document.getElementById('totalJournals').textContent} journals...</div>
+                    </div>
+                `;
+            }
+
+            showError(error) {
+                this.resultsContainer.style.display = 'block';
+                this.resultsTitle.textContent = 'Error';
+                this.resultsMeta.textContent = '';
+                this.resultsList.innerHTML = `
+                    <div class="error">
+                        <i class="fas fa-exclamation-triangle"></i> ${error}
+                    </div>
+                `;
+            }
+
+            displayResults(data) {
+                this.resultsContainer.style.display = 'block';
+                this.resultsTitle.textContent = `Search Results for "${data.query}"`;
+                this.resultsMeta.textContent = `Found ${data.total_results} relevant journals`;
+
+                if (data.results.length === 0) {
+                    this.resultsList.innerHTML = `
+                        <div class="no-results">
+                            <i class="fas fa-search"></i>
+                            <h3>No results found</h3>
+                            <p>Try different keywords, ISSN numbers, or reduce the minimum score threshold</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                this.resultsList.innerHTML = data.results.map((result, index) => `
+                    <div class="result-item" onclick="toggleResult(${index})">
+                        <div class="result-header">
+                            <div>
+                                <div class="result-title">
+                                    ${result.title}
+                                    ${result.active_status ? `
+                                        <span class="status-badge ${result.active_status.toLowerCase() === 'active' ? 'status-active' : 'status-inactive'}">
+                                            ${result.active_status}
+                                        </span>
+                                    ` : ''}
+                                </div>
+                            </div>
+                            <i class="fas fa-chevron-down expand-icon"></i>
+                        </div>
+                        <div class="result-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-building meta-icon"></i>
+                                <span>${result.publisher || 'Unknown Publisher'}</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-bookmark meta-icon"></i>
+                                <span>${result.type || 'Unknown Type'}</span>
+                            </div>
+                            ${result.issn ? `
+                            <div class="meta-item">
+                                <i class="fas fa-barcode meta-icon"></i>
+                                <span>ISSN: ${result.issn}</span>
+                            </div>
+                            ` : ''}
+                            ${result.eissn ? `
+                            <div class="meta-item">
+                                <i class="fas fa-barcode meta-icon"></i>
+                                <span>eISSN: ${result.eissn}</span>
+                            </div>
+                            ` : ''}
+                            ${result.coverage ? `
+                            <div class="meta-item">
+                                <i class="fas fa-calendar meta-icon"></i>
+                                <span>Coverage: ${result.coverage}</span>
+                            </div>
+                            ` : ''}
+                            ${result.open_access ? `
+                            <div class="meta-item">
+                                <i class="fas fa-unlock meta-icon"></i>
+                                <span>Open Access: ${result.open_access}</span>
+                            </div>
+                            ` : ''}
+                        </div>
+                        <div class="result-description" id="description-${index}">
+                            <p>${result.description}</p>
+                        </div>
+                    </div>
+                `).join('');
+
+                // Auto-scroll to results
+                setTimeout(() => {
+                    this.resultsContainer.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'start' 
+                    });
+                }, 100);
+            }
+        }
+
+        // Initialize the search interface when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            window.scopusSearch = new ScopusSearch();
+        });
+
+        // Advanced Search Modal Functions
+        function openAdvancedSearch() {
+            document.getElementById('advancedSearchModal').style.display = 'flex';
+        }
+
+        function closeAdvancedSearch() {
+            document.getElementById('advancedSearchModal').style.display = 'none';
+        }
+
+        function clearAdvancedFilters() {
+            document.getElementById('publisherFilter').value = '';
+            document.getElementById('typeFilter').value = '';
+            document.getElementById('openAccessFilter').value = '';
+            document.getElementById('subjectFilter').value = '';
+            document.getElementById('languageFilter').value = '';
+            
+            if (window.scopusSearch) {
+                window.scopusSearch.advancedFilters = {};
+            }
+        }
+
+        function applyAdvancedSearch() {
+            const filters = {};
+            
+            const publisher = document.getElementById('publisherFilter').value.trim();
+            const type = document.getElementById('typeFilter').value;
+            const openAccess = document.getElementById('openAccessFilter').value;
+            const subjects = document.getElementById('subjectFilter').value.trim();
+            const language = document.getElementById('languageFilter').value;
+            
+            if (publisher) filters.publisher = publisher;
+            if (type) filters.type = type;
+            if (openAccess) filters.open_access = openAccess;
+            if (subjects) filters.subject_areas = subjects;
+            if (language) filters.language = language;
+            
+            if (window.scopusSearch) {
+                window.scopusSearch.advancedFilters = filters;
+            }
+            
+            closeAdvancedSearch();
+            
+            // Trigger search if there's a query
+            const query = document.getElementById('searchInput').value.trim();
+            if (query && window.scopusSearch) {
+                window.scopusSearch.performSearch();
+            }
+        }
+
+        // Toggle result expansion
+        function toggleResult(index) {
+            const resultItem = document.querySelectorAll('.result-item')[index];
+            const description = document.getElementById(`description-${index}`);
+            
+            if (resultItem && description) {
+                const isExpanded = resultItem.classList.contains('expanded');
+                
+                // Close all other expanded results
+                document.querySelectorAll('.result-item.expanded').forEach(item => {
+                    item.classList.remove('expanded');
+                });
+                document.querySelectorAll('.result-description.show').forEach(desc => {
+                    desc.classList.remove('show');
+                });
+                
+                if (!isExpanded) {
+                    resultItem.classList.add('expanded');
+                    description.classList.add('show');
+                    
+                    // Scroll the expanded result into view
+                    setTimeout(() => {
+                        resultItem.scrollIntoView({ 
+                            behavior: 'smooth', 
+                            block: 'center' 
+                        });
+                    }, 150);
+                }
+            }
+        }
+
+        // Close modal when clicking outside
+        document.addEventListener('click', (e) => {
+            const modal = document.getElementById('advancedSearchModal');
+            if (e.target === modal) {
+                closeAdvancedSearch();
+            }
+        });
+    </script>
+</body>
+</html>
