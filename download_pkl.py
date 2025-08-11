@@ -1,8 +1,14 @@
 import os
 import gdown
 
-FILE_ID = os.getenv("19kBbAjIX5ZV1vywEVrpKTAqBN73FV7vK")  # or DRIVE_FOLDER_ID
-if not os.path.exists("scopus_search_index.pkl"):
-    url = f"https://drive.google.com/uc?id={FILE_ID}"
-    gdown.download(url, "scopus_search_index.pkl", quiet=False)
+# Read file ID from environment variable
+file_id = os.getenv("DRIVE_FILE_ID")
+if not file_id:
+    raise ValueError("DRIVE_FILE_ID environment variable not set.")
 
+url = f"https://drive.google.com/uc?id={file_id}"
+output = "scopus_search_index.pkl"
+
+print(f"Downloading from {url}...")
+gdown.download(url, output, quiet=False)
+print("Download complete.")
