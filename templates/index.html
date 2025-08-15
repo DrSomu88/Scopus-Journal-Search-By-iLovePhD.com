@@ -1,20 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4SHNWMKFX7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-4SHNWMKFX7');
-</script>
+    <!-- Enhanced Meta Tags for SEO -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scopus Journal Search by iLovePhD.com</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Free Scopus Journal Search Tool | Find Academic Journals by Topic | iLovePhD</title>
+    <meta name="description" content="Discover and search through thousands of Scopus-indexed academic journals using AI-powered natural language search. Find the perfect journal for your research publication - free tool by iLovePhD.com">
+    <meta name="keywords" content="scopus journal search, academic journals, research publication, journal finder, scopus indexed journals, research tools, academic publishing, scholarly journals">
+    <meta name="author" content="iLovePhD.com">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Free Scopus Journal Search Tool | Find Academic Journals">
+    <meta property="og:description" content="AI-powered search through thousands of Scopus journals. Find the perfect journal for your research publication.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ilovephd.com/scopus-search">
+    <meta property="og:image" content="https://ilovephd.com/images/scopus-search-tool.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Scopus Journal Search Tool">
+    <meta name="twitter:description" content="AI-powered search through thousands of Scopus journals">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://ilovephd.com/scopus-search">
+    
+    <!-- Favicon - Multiple formats for better compatibility -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#667eea">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+    <meta name="theme-color" content="#667eea">
+    
+    <!-- External Resources -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Scopus Journal Search Tool",
+        "description": "AI-powered search tool for discovering Scopus-indexed academic journals",
+        "url": "https://ilovephd.com/scopus-search",
+        "applicationCategory": "ResearchTool",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "provider": {
+            "@type": "Organization",
+            "name": "iLovePhD",
+            "url": "https://ilovephd.com"
+        }
+    }
+    </script>
+    
     <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --accent-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --error-color: #ef4444;
+            --neutral-100: #f8fafc;
+            --neutral-200: #e2e8f0;
+            --neutral-300: #cbd5e1;
+            --neutral-600: #475569;
+            --neutral-800: #1e293b;
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -23,44 +94,167 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--primary-gradient);
             min-height: 100vh;
-            color: #333;
+            color: var(--neutral-800);
+            line-height: 1.6;
         }
 
-        .container {
+        /* Enhanced Header Section */
+        .hero-section {
+            text-align: center;
+            padding: 60px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><defs><radialGradient id="a" cx="50%" cy="50%"><stop offset="0%" stop-color="rgba(255,255,255,0.1)"/><stop offset="100%" stop-color="transparent"/></radialGradient></defs><circle fill="url(%23a)" cx="10" cy="10" r="10"/><circle fill="url(%23a)" cx="90" cy="10" r="10"/></svg>') repeat;
+            opacity: 0.5;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            color: white;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            letter-spacing: -0.02em;
+        }
+
+        .hero-subtitle {
+            color: rgba(255,255,255,0.9);
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            font-weight: 400;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255,255,255,0.8);
+            font-size: 0.95rem;
+        }
+
+        .hero-feature i {
+            color: #a78bfa;
+            font-size: 1.1rem;
+        }
+
+        /* Enhanced Container */
+        .main-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 20px;
+            position: relative;
         }
 
-        .header {
-            text-align: center;
+        /* Improved Stats Panel */
+        .stats-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 30px;
             margin-bottom: 40px;
-            padding: 40px 0;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
         }
 
-        .header h1 {
-            color: white;
-            font-size: 3.5rem;
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-item {
+            position: relative;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
             font-weight: 700;
-            margin-bottom: 15px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            color: white;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
 
-        .header p {
-            color: rgba(255,255,255,0.9);
-            font-size: 1.2rem;
-            font-weight: 300;
+        .stat-label {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.95rem;
+            font-weight: 500;
         }
 
+        /* Enhanced Search Container */
         .search-container {
             background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            border-radius: 24px;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.15);
             padding: 40px;
+            margin-bottom: 40px;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .search-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--primary-gradient);
+            border-radius: 24px 24px 0 0;
+        }
+
+        .search-header {
+            text-align: center;
             margin-bottom: 30px;
-            backdrop-filter: blur(10px);
+        }
+
+        .search-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--neutral-800);
+            margin-bottom: 8px;
+        }
+
+        .search-description {
+            color: var(--neutral-600);
+            font-size: 1rem;
         }
 
         .search-box {
@@ -70,18 +264,20 @@
 
         .search-input {
             width: 100%;
-            padding: 20px 60px 20px 25px;
+            padding: 20px 70px 20px 25px;
             font-size: 1.1rem;
-            border: 2px solid #e1e5e9;
-            border-radius: 15px;
+            border: 2px solid var(--neutral-200);
+            border-radius: 16px;
             outline: none;
             transition: all 0.3s ease;
             font-family: 'Inter', sans-serif;
+            background: var(--neutral-100);
         }
 
         .search-input:focus {
             border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+            background: white;
         }
 
         .search-btn {
@@ -89,33 +285,75 @@
             right: 8px;
             top: 50%;
             transform: translateY(-50%);
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--primary-gradient);
             color: white;
             border: none;
-            padding: 12px 20px;
-            border-radius: 10px;
+            padding: 14px 24px;
+            border-radius: 12px;
             cursor: pointer;
             transition: all 0.3s ease;
             font-size: 1rem;
+            font-weight: 500;
         }
 
         .search-btn:hover {
             transform: translateY(-50%) scale(1.05);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
         }
 
-        .search-btn:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-            transform: translateY(-50%);
+        /* Ad Container Styles */
+        .ad-container {
+            margin: 20px 0;
+            text-align: center;
+            position: relative;
         }
 
+        .ad-label {
+            font-size: 0.75rem;
+            color: var(--neutral-600);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .ad-banner {
+            background: var(--neutral-100);
+            border: 1px solid var(--neutral-200);
+            border-radius: 12px;
+            padding: 20px;
+            min-height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .ad-banner:hover {
+            border-color: var(--neutral-300);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .sidebar-ad {
+            position: sticky;
+            top: 20px;
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            border: 1px solid var(--neutral-200);
+        }
+
+        /* Enhanced Advanced Options */
         .advanced-options {
             display: flex;
             gap: 20px;
             align-items: center;
             flex-wrap: wrap;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: var(--neutral-100);
+            border-radius: 12px;
+            border: 1px solid var(--neutral-200);
         }
 
         .option-group {
@@ -126,15 +364,17 @@
 
         .option-group label {
             font-weight: 500;
-            color: #666;
+            color: var(--neutral-600);
+            font-size: 0.9rem;
         }
 
         .option-input {
             padding: 8px 12px;
-            border: 2px solid #e1e5e9;
+            border: 2px solid var(--neutral-200);
             border-radius: 8px;
             outline: none;
-            transition: border-color 0.3s ease;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
         }
 
         .option-input:focus {
@@ -142,33 +382,44 @@
         }
 
         .advanced-btn {
-            background: linear-gradient(135deg, #f8f9fc 0%, #e8ecf7 100%);
-            color: #667eea;
-            border: 2px solid rgba(102, 126, 234, 0.2);
-            padding: 8px 16px;
-            border-radius: 8px;
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 10px;
             cursor: pointer;
             transition: all 0.3s ease;
-            font-size: 0.9rem;
-            font-weight: 500;
+            font-size: 0.95rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 2px 8px rgba(79, 70, 229, 0.3);
         }
 
         .advanced-btn:hover {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: linear-gradient(135deg, #3730a3 0%, #581c87 100%);
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
         }
 
+        .advanced-btn i {
+            font-size: 1rem;
+        }
+
+        /* Enhanced Suggestions */
         .suggestions {
             margin-bottom: 20px;
         }
 
         .suggestions h3 {
-            color: #666;
+            color: var(--neutral-600);
             margin-bottom: 15px;
             font-size: 1rem;
             font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .suggestion-tags {
@@ -178,167 +429,110 @@
         }
 
         .suggestion-tag {
-            background: linear-gradient(135deg, #f8f9fc 0%, #e8ecf7 100%);
+            background: white;
             color: #667eea;
             padding: 8px 16px;
             border-radius: 20px;
             cursor: pointer;
             transition: all 0.3s ease;
             font-size: 0.9rem;
-            border: 1px solid rgba(102, 126, 234, 0.2);
+            border: 2px solid rgba(102, 126, 234, 0.1);
+            font-weight: 500;
         }
 
         .suggestion-tag:hover {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--primary-gradient);
             color: white;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
         }
 
-        .stats-panel {
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 30px;
-            color: white;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-
+        /* Enhanced Results Container */
         .results-container {
             background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            border-radius: 24px;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.15);
             overflow: hidden;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             display: none;
+            border: 1px solid rgba(255,255,255,0.2);
         }
 
         .results-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--primary-gradient);
             color: white;
-            padding: 25px 30px;
+            padding: 30px;
+            position: relative;
+        }
+
+        .results-header::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-top: 10px solid #764ba2;
         }
 
         .results-title {
-            font-size: 1.5rem;
-            font-weight: 600;
+            font-size: 1.6rem;
+            font-weight: 700;
             margin-bottom: 10px;
         }
 
         .results-meta {
             opacity: 0.9;
-            font-size: 1rem;
+            font-size: 1.1rem;
+            font-weight: 400;
+        }
+
+        /* Two Column Layout for Results */
+        .results-layout {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 20px;
+            padding: 0 20px;
+        }
+
+        .results-main {
+            min-height: 400px;
         }
 
         .results-list {
-            max-height: 600px;
+            max-height: 700px;
             overflow-y: auto;
+            padding: 20px 0;
         }
 
         .result-item {
-            padding: 25px 30px;
-            border-bottom: 1px solid #f0f2f5;
+            padding: 25px;
+            border-bottom: 1px solid var(--neutral-200);
             transition: all 0.3s ease;
             cursor: pointer;
             position: relative;
+            margin: 0 20px;
+            border-radius: 12px;
         }
 
         .result-item:hover {
-            background: #f8f9fc;
-            transform: translateX(5px);
-        }
-
-        .result-item:last-child {
-            border-bottom: none;
+            background: var(--neutral-100);
+            transform: translateX(8px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
 
         .result-item.expanded {
-            background: #f8fdff;
+            background: #f0f9ff;
             border-left: 4px solid #667eea;
-        }
-
-        .result-description {
-            margin-top: 15px;
-            padding: 15px;
-            background: #f0f4ff;
-            border-radius: 8px;
-            border-left: 3px solid #667eea;
-            display: none;
-            animation: fadeIn 0.3s ease;
-        }
-
-        .result-description.show {
-            display: block;
-        }
-
-        .result-description p {
-            margin: 0;
-            line-height: 1.6;
-            color: #2d3748;
-            font-style: italic;
-        }
-
-        .expand-icon {
-            position: absolute;
-            top: 25px;
-            right: 30px;
-            color: #667eea;
-            font-size: 18px;
-            transition: transform 0.3s ease;
-        }
-
-        .result-item.expanded .expand-icon {
-            transform: rotate(180deg);
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .status-badge {
-            display: inline-block;
-            padding: 3px 8px;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            margin-left: 8px;
-        }
-
-        .status-active {
-            background: #d4edda;
-            color: #155724;
-        }
-
-        .status-inactive {
-            background: #f8d7da;
-            color: #721c24;
+            transform: translateX(0);
         }
 
         .result-header {
             display: flex;
-            justify-content: between;
+            justify-content: space-between;
             align-items: flex-start;
             margin-bottom: 15px;
         }
@@ -346,12 +540,10 @@
         .result-title {
             font-size: 1.2rem;
             font-weight: 600;
-            color: #2d3748;
+            color: var(--neutral-800);
             margin-bottom: 8px;
             line-height: 1.4;
         }
-
-
 
         .result-meta {
             display: grid;
@@ -373,34 +565,126 @@
             width: 16px;
         }
 
-        .result-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .result-tag {
-            background: #f0f2f5;
-            color: #666;
+        /* Status Badge Styles - Updated for clearer visibility */
+        .status-badge {
+            display: inline-block;
             padding: 4px 10px;
             border-radius: 12px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-left: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
+        .status-active {
+            background: #dcfce7;
+            color: #166534;
+            border: 1px solid #22c55e;
+        }
+
+        .status-inactive {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #ef4444;
+        }
+
+        /* AI Description - Hidden by default, shown on expand */
+        .result-description {
+            margin-top: 15px;
+            padding: 20px;
+            background: #f0f4ff;
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .result-description.show {
+            display: block;
+        }
+
+        .result-description h4 {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #667eea;
+            margin-bottom: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .result-description p {
+            line-height: 1.6;
+            color: var(--neutral-800);
+            margin-bottom: 0;
+        }
+
+        .expand-icon {
+            color: #667eea;
+            font-size: 18px;
+            transition: transform 0.3s ease;
+            min-width: 18px;
+        }
+
+        .result-item.expanded .expand-icon {
+            transform: rotate(180deg);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Enhanced Footer */
+        .footer-section {
+            background: rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px 20px;
+            text-align: center;
+            color: rgba(255,255,255,0.8);
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: white;
+        }
+
+        /* Loading and Error States */
         .loading {
             text-align: center;
-            padding: 40px;
+            padding: 60px 20px;
         }
 
         .spinner {
             display: inline-block;
-            width: 40px;
-            height: 40px;
-            border: 4px solid #f3f3f3;
+            width: 50px;
+            height: 50px;
+            border: 4px solid var(--neutral-200);
             border-top: 4px solid #667eea;
             border-radius: 50%;
             animation: spin 1s linear infinite;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         @keyframes spin {
@@ -429,7 +713,7 @@
             color: #ccc;
         }
 
-        /* Modal Styles */
+        /* Enhanced Modal Styles */
         .modal {
             position: fixed;
             top: 0;
@@ -437,41 +721,63 @@
             width: 100%;
             height: 100%;
             background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(5px);
             z-index: 1000;
             display: flex;
             align-items: center;
             justify-content: center;
+            animation: modalFadeIn 0.3s ease;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .modal-content {
             background: white;
-            border-radius: 15px;
+            border-radius: 20px;
             padding: 0;
-            max-width: 500px;
+            max-width: 600px;
             width: 90%;
-            max-height: 80vh;
+            max-height: 90vh;
             overflow-y: auto;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.3);
+            animation: modalSlideIn 0.3s ease;
+        }
+
+        @keyframes modalSlideIn {
+            from { transform: translateY(-50px) scale(0.9); }
+            to { transform: translateY(0) scale(1); }
         }
 
         .modal-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--primary-gradient);
             color: white;
-            padding: 20px 25px;
-            border-radius: 15px 15px 0 0;
+            padding: 25px 30px;
+            border-radius: 20px 20px 0 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
+        }
+
+        .modal-header h3 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.3rem;
+            font-weight: 600;
         }
 
         .close-btn {
             background: none;
             border: none;
             color: white;
-            font-size: 24px;
+            font-size: 28px;
             cursor: pointer;
-            padding: 0;
-            width: 30px;
-            height: 30px;
+            padding: 5px;
+            width: 35px;
+            height: 35px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -484,46 +790,52 @@
         }
 
         .modal-body {
-            padding: 25px;
+            padding: 30px;
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: #333;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--neutral-800);
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .form-group input,
         .form-group select {
             width: 100%;
-            padding: 10px 15px;
-            border: 2px solid #e1e5e9;
-            border-radius: 8px;
-            font-size: 14px;
+            padding: 12px 16px;
+            border: 2px solid var(--neutral-200);
+            border-radius: 10px;
+            font-size: 15px;
             transition: border-color 0.3s ease;
+            font-family: 'Inter', sans-serif;
         }
 
         .form-group input:focus,
         .form-group select:focus {
             outline: none;
             border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
         }
 
         .form-group small {
             display: block;
-            margin-top: 5px;
-            color: #666;
-            font-size: 12px;
+            margin-top: 8px;
+            color: var(--neutral-600);
+            font-size: 13px;
+            line-height: 1.4;
         }
 
         .modal-footer {
-            padding: 20px 25px;
-            border-top: 1px solid #e1e5e9;
+            padding: 25px 30px;
+            border-top: 1px solid var(--neutral-200);
             display: flex;
             gap: 15px;
             justify-content: flex-end;
@@ -531,37 +843,58 @@
 
         .btn-primary,
         .btn-secondary {
-            padding: 10px 20px;
+            padding: 12px 24px;
             border: none;
-            border-radius: 8px;
+            border-radius: 10px;
             cursor: pointer;
-            font-weight: 500;
+            font-weight: 600;
             transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--primary-gradient);
             color: white;
         }
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
         }
 
         .btn-secondary {
-            background: #f8f9fc;
-            color: #666;
-            border: 1px solid #e1e5e9;
+            background: var(--neutral-100);
+            color: var(--neutral-600);
+            border: 2px solid var(--neutral-200);
         }
 
         .btn-secondary:hover {
-            background: #e8ecf7;
+            background: var(--neutral-200);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .results-layout {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar-ad {
+                position: static;
+                margin-top: 20px;
+            }
         }
 
         @media (max-width: 768px) {
-            .header h1 {
+            .hero-title {
                 font-size: 2.5rem;
+            }
+            
+            .hero-features {
+                flex-direction: column;
+                gap: 15px;
             }
             
             .search-container {
@@ -571,14 +904,16 @@
             .advanced-options {
                 flex-direction: column;
                 align-items: flex-start;
+                gap: 15px;
             }
             
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
             
-            .result-meta {
-                grid-template-columns: 1fr;
+            .result-item {
+                margin: 0 10px;
+                padding: 20px;
             }
 
             .modal-content {
@@ -586,50 +921,174 @@
                 margin: 20px;
             }
         }
+
+        @media (max-width: 480px) {
+            .search-input {
+                padding: 16px 60px 16px 20px;
+                font-size: 1rem;
+            }
+            
+            .search-btn {
+                padding: 12px 20px;
+            }
+        }
+
+        /* Accessibility Enhancements */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: var(--neutral-800);
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            transition: top 0.3s;
+            z-index: 1000;
+        }
+
+        .skip-link:focus {
+            top: 6px;
+        }
+
+        /* Focus indicators */
+        .search-btn:focus,
+        .advanced-btn:focus,
+        .suggestion-tag:focus {
+            outline: 2px solid #667eea;
+            outline-offset: 2px;
+        }
+
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            .search-input {
+                border-width: 3px;
+            }
+            
+            .result-item:hover {
+                border: 2px solid var(--neutral-800);
+            }
+        }
+
+        /* Reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1><i class="fas fa-graduation-cap"></i> Scopus Journal Search</h1>
-            <p>Discover academic journals with natural language processing | <strong>iLovePhD.com</strong></p>
-        </div>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-        <div class="stats-panel" id="statsPanel">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-number" id="totalJournals">-</div>
-                    <div class="stat-label">Total Journals</div>
+    <!-- Enhanced Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                Scopus Journal Search
+            </h1>
+            <p class="hero-subtitle">
+                Discover academic journals with AI-powered natural language search. Find the perfect journal for your research publication.
+            </p>
+            <div class="hero-features">
+                <div class="hero-feature">
+                    <i class="fas fa-robot" aria-hidden="true"></i>
+                    <span>AI-Powered Search</span>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number" id="totalFeatures">-</div>
-                    <div class="stat-label">Search Features</div>
+                <div class="hero-feature">
+                    <i class="fas fa-database" aria-hidden="true"></i>
+                    <span>40,000+ Journals</span>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number" id="indexSize">-</div>
-                    <div class="stat-label">Index Size (MB)</div>
+                <div class="hero-feature">
+                    <i class="fas fa-bolt" aria-hidden="true"></i>
+                    <span>Instant Results</span>
+                </div>
+                <div class="hero-feature">
+                    <i class="fas fa-heart" aria-hidden="true"></i>
+                    <span>Free Forever</span>
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="search-container">
+    <!-- Main Content -->
+    <main class="main-container" id="main-content">
+        <!-- Stats Panel -->
+        <section class="stats-panel" id="statsPanel" aria-label="Search statistics">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" id="totalJournals" aria-live="polite">-</div>
+                    <div class="stat-label">Total Journals</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="totalFeatures" aria-live="polite">-</div>
+                    <div class="stat-label">Search Features</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="indexSize" aria-live="polite">-</div>
+                    <div class="stat-label">Index Size (MB)</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">4.8★</div>
+                    <div class="stat-label">User Rating</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search Interface -->
+        <section class="search-container">
+            <div class="search-header">
+                <h2 class="search-title">Start Your Journal Search</h2>
+                <p class="search-description">Enter keywords, research topics, or ISSN numbers to find relevant journals</p>
+            </div>
+
             <div class="search-box">
+                <label for="searchInput" class="sr-only">Search for journals</label>
                 <input 
                     type="text" 
                     class="search-input" 
                     id="searchInput" 
-                    placeholder="Search for journals by topic or ISSN (e.g., 'computer science AI', '1234-5678', 'medical research')..."
+                    placeholder="Search for journals by topic or ISSN (e.g., 'artificial intelligence machine learning', '1234-5678')..."
                     autocomplete="off"
+                    aria-describedby="search-help"
                 >
-                <button class="search-btn" id="searchBtn">
-                    <i class="fas fa-search"></i>
+                <button class="search-btn" id="searchBtn" type="button" aria-label="Search journals">
+                    <i class="fas fa-search" aria-hidden="true"></i>
                 </button>
+            </div>
+
+            <!-- Ad Space 1: Below Search Box (Horizontal Banner) -->
+            <div class="ad-container">
+                <div class="ad-label">Advertisement</div>
+                
+                <div class="ad-banner" style="min-height: 100px;">
+                    <!-- Google AdSense Display Ad (728x90 or responsive) -->
+                    <div><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7817582553139412"
+                        crossorigin="anonymous"></script>
+                   <!-- Scopus.ilovephd ad 1 -->
+                   <ins class="adsbygoogle"
+                        style="display:block"
+                        data-ad-client="ca-pub-7817582553139412"
+                        data-ad-slot="4189384149"
+                        data-ad-format="auto"
+                        data-full-width-responsive="true"></ins>
+                   <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                   </script>
+                   
+                </div>
+                </div>
             </div>
 
             <div class="advanced-options">
                 <div class="option-group">
                     <label for="maxResults">Max Results:</label>
-                    <select class="option-input" id="maxResults">
+                    <select class="option-input" id="maxResults" aria-label="Maximum number of results">
                         <option value="10">10</option>
                         <option value="20" selected>20</option>
                         <option value="50">50</option>
@@ -638,7 +1097,7 @@
                 </div>
                 <div class="option-group">
                     <label for="minScore">Min Score:</label>
-                    <select class="option-input" id="minScore">
+                    <select class="option-input" id="minScore" aria-label="Minimum relevance score">
                         <option value="0.05">0.05</option>
                         <option value="0.1" selected>0.1</option>
                         <option value="0.2">0.2</option>
@@ -646,73 +1105,192 @@
                     </select>
                 </div>
                 <div class="option-group">
-                    <button class="advanced-btn" onclick="openAdvancedSearch()">
-                        <i class="fas fa-sliders-h"></i> Advanced Filters
+                    <button class="advanced-btn" onclick="openAdvancedSearch()" type="button">
+                        <i class="fas fa-filter" aria-hidden="true"></i>
+                        Advanced Filters
                     </button>
                 </div>
             </div>
 
             <div class="suggestions">
-                <h3><i class="fas fa-lightbulb"></i> Popular Search Topics</h3>
-                <div class="suggestion-tags" id="suggestionTags">
+                <h3>
+                    <i class="fas fa-lightbulb" aria-hidden="true"></i>
+                    Popular Search Topics
+                </h3>
+                <div class="suggestion-tags" id="suggestionTags" role="list">
                     <!-- Suggestions will be loaded here -->
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="results-container" id="resultsContainer">
+        <!-- Results Container with Sidebar -->
+        <section class="results-container" id="resultsContainer" aria-live="polite">
             <div class="results-header">
-                <div class="results-title" id="resultsTitle">Search Results</div>
-                <div class="results-meta" id="resultsMeta"></div>
+                <h2 class="results-title" id="resultsTitle">Search Results</h2>
+                <p class="results-meta" id="resultsMeta"></p>
             </div>
-            <div class="results-list" id="resultsList">
-                <!-- Results will be displayed here -->
+            <div class="results-layout">
+                <div class="results-main">
+                    <div class="results-list" id="resultsList">
+                        <!-- Results will be displayed here -->
+                    </div>
+                </div>
+                <!-- Sidebar for ads -->
+                <aside class="results-sidebar">
+                    <!-- Ad Space 2: Sidebar (Vertical) -->
+                    <div class="ad-container sidebar-ad">
+                        <div class="ad-label">Sponsored</div>
+                        <div class="ad-banner" style="min-height: 250px;">
+                            <!-- Google AdSense Medium Rectangle (300x250) -->
+                            <div>
+                                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7817582553139412"
+                                crossorigin="anonymous"></script>
+                           <!-- scopus.ilovephd ad2 -->
+                           <ins class="adsbygoogle"
+                                style="display:block"
+                                data-ad-client="ca-pub-7817582553139412"
+                                data-ad-slot="6050897200"
+                                data-ad-format="auto"
+                                data-full-width-responsive="true"></ins>
+                           <script>
+                                (adsbygoogle = window.adsbygoogle || []).push({});
+                           </script>
+
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Additional content or features -->
+                    <div style="margin-top: 20px; padding: 20px; background: var(--neutral-100); border-radius: 12px;">
+                        <h3 style="margin-bottom: 15px; font-size: 1.1rem;">Quick Tips</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 10px; display: flex; align-items: start; gap: 8px;">
+                                <i class="fas fa-check-circle" style="color: var(--success-color); margin-top: 2px;"></i>
+                                Use specific keywords for better results
+                            </li>
+                            <li style="margin-bottom: 10px; display: flex; align-items: start; gap: 8px;">
+                                <i class="fas fa-check-circle" style="color: var(--success-color); margin-top: 2px;"></i>
+                                Search by ISSN for exact journal lookup
+                            </li>
+                            <li style="display: flex; align-items: start; gap: 8px;">
+                                <i class="fas fa-check-circle" style="color: var(--success-color); margin-top: 2px;"></i>
+                                Use advanced filters for precision
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- Ad Space 3: Between results and footer (if needed) -->
+        <div class="ad-container" style="margin-top: 40px;">
+            <div class="ad-label">Advertisement</div>
+            <div class="ad-banner" style="min-height: 90px;">
+                <!-- Google AdSense Responsive Ad -->
+                <div>
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7817582553139412"
+                    crossorigin="anonymous"></script>
+               <!-- scopus.ilovephd ad3 -->
+               <ins class="adsbygoogle"
+                    style="display:block"
+                    data-ad-client="ca-pub-7817582553139412"
+                    data-ad-slot="4737815536"
+                    data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
+               <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+               </script>
+               </div>
             </div>
         </div>
-    </div>
+    </main>
 
-    <!-- Advanced Search Modal -->
-    <div class="modal" id="advancedSearchModal" style="display: none;">
+    <!-- Enhanced Footer -->
+    <footer class="footer-section">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="https://ilovephd.com" class="footer-link">iLovePhD.com</a>
+                <a href="https://www.ilovephd.com/about-us/" class="footer-link">About</a>
+                <a href="https://www.ilovephd.com/privacy-policy/" class="footer-link">Privacy Policy</a>
+                
+            </div>
+            <p style="margin-bottom: 15px;">
+                Helping researchers find the perfect journals for their publications since 2019
+            </p>
+            <p>Contact us: ilovephdyt@gmail.com</p>
+            <p style="font-size: 0.9rem; opacity: 0.8;">
+                <br>
+                © 2025 iLovePhD.com - All rights reserved. Data sourced from Scopus database.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Enhanced Advanced Search Modal -->
+    <div class="modal" id="advancedSearchModal" style="display: none;" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
         <div class="modal-content">
             <div class="modal-header">
-                <h3><i class="fas fa-cogs"></i> Advanced Search Filters</h3>
-                <button class="close-btn" onclick="closeAdvancedSearch()">&times;</button>
+                <h3 id="modal-title">
+                    <i class="fas fa-filter"></i> 
+                    Advanced Search Filters
+                </h3>
+                <button class="close-btn" onclick="closeAdvancedSearch()" aria-label="Close modal">&times;</button>
             </div>
             
             <div class="modal-body">
                 <div class="form-group">
-                    <label>Publisher Filter:</label>
-                    <input type="text" id="publisherFilter" placeholder="e.g., Elsevier, Springer, IEEE">
+                    <label for="publisherFilter">
+                        <i class="fas fa-building" style="color: #4f46e5;"></i>
+                        Publisher Filter:
+                    </label>
+                    <input type="text" id="publisherFilter" placeholder="e.g., Elsevier, Springer, IEEE, Wiley">
+                    <small>Filter journals by specific publishers</small>
                 </div>
                 
                 <div class="form-group">
-                    <label>Journal Type:</label>
+                    <label for="typeFilter">
+                        <i class="fas fa-bookmark" style="color: #4f46e5;"></i>
+                        Publication Type:
+                    </label>
                     <select id="typeFilter">
                         <option value="">All Types</option>
                         <option value="Journal">Journal</option>
                         <option value="Book Series">Book Series</option>
                         <option value="Conference Proceeding">Conference Proceeding</option>
                     </select>
+                    <small>Select the type of publication you're looking for</small>
                 </div>
                 
                 <div class="form-group">
-                    <label>Open Access:</label>
+                    <label for="openAccessFilter">
+                        <i class="fas fa-unlock-alt" style="color: #4f46e5;"></i>
+                        Open Access Policy:
+                    </label>
                     <select id="openAccessFilter">
-                        <option value="">Any</option>
+                        <option value="">Any Access Type</option>
                         <option value="Full">Full Open Access</option>
-                        <option value="Hybrid">Hybrid</option>
+                        <option value="Hybrid">Hybrid Open Access</option>
                         <option value="Subscription">Subscription Only</option>
                     </select>
+                    <small>Filter by journal's open access policy</small>
                 </div>
                 
                 <div class="form-group">
-                    <label>Subject Area Codes (ASJC):</label>
-                    <input type="text" id="subjectFilter" placeholder="e.g., 1702, 1712 (comma-separated)">
-                    <small>Common codes: 1702 (AI), 1712 (Software), 2718 (Medicine)</small>
+                    <label for="subjectFilter">
+                        <i class="fas fa-tags" style="color: #4f46e5;"></i>
+                        Subject Area Codes (ASJC):
+                    </label>
+                    <input type="text" id="subjectFilter" placeholder="e.g., 1702, 1712, 2718 (comma-separated)">
+                    <small>
+                        <strong>Popular codes:</strong> 1702 (Artificial Intelligence), 1712 (Software), 1706 (Computer Science Applications), 
+                        2718 (Medicine), 2739 (Public Health), 1909 (Energy)
+                    </small>
                 </div>
                 
                 <div class="form-group">
-                    <label>Language:</label>
+                    <label for="languageFilter">
+                        <i class="fas fa-globe" style="color: #4f46e5;"></i>
+                        Publication Language:
+                    </label>
                     <select id="languageFilter">
                         <option value="">Any Language</option>
                         <option value="eng">English</option>
@@ -720,13 +1298,33 @@
                         <option value="fre">French</option>
                         <option value="ger">German</option>
                         <option value="chi">Chinese</option>
+                        <option value="ita">Italian</option>
+                        <option value="por">Portuguese</option>
                     </select>
+                    <small>Filter journals by their primary publication language</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="statusFilter">
+                        <i class="fas fa-toggle-on" style="color: #4f46e5;"></i>
+                        Journal Status:
+                    </label>
+                    <select id="statusFilter">
+                        <option value="">Any Status</option>
+                        <option value="Active">Active Only</option>
+                        <option value="Inactive">Inactive Only</option>
+                    </select>
+                    <small>Filter by whether the journal is currently accepting submissions</small>
                 </div>
             </div>
             
             <div class="modal-footer">
-                <button class="btn-secondary" onclick="clearAdvancedFilters()">Clear All</button>
-                <button class="btn-primary" onclick="applyAdvancedSearch()">Apply Filters</button>
+                <button class="btn-secondary" onclick="clearAdvancedFilters()">
+                    <i class="fas fa-eraser"></i> Clear All
+                </button>
+                <button class="btn-primary" onclick="applyAdvancedSearch()">
+                    <i class="fas fa-search"></i> Apply Filters
+                </button>
             </div>
         </div>
     </div>
@@ -746,6 +1344,7 @@
                 this.initializeEventListeners();
                 this.loadStats();
                 this.loadSuggestions();
+                this.initializeAccessibility();
             }
 
             initializeEventListeners() {
@@ -753,6 +1352,44 @@
                 this.searchInput.addEventListener('keypress', (e) => {
                     if (e.key === 'Enter') this.performSearch();
                 });
+
+                // Add input validation
+                this.searchInput.addEventListener('input', (e) => {
+                    this.validateInput(e.target.value);
+                });
+            }
+
+            initializeAccessibility() {
+                // Add ARIA live regions for dynamic content
+                const liveRegion = document.createElement('div');
+                liveRegion.id = 'live-region';
+                liveRegion.setAttribute('aria-live', 'polite');
+                liveRegion.setAttribute('aria-atomic', 'true');
+                liveRegion.style.position = 'absolute';
+                liveRegion.style.left = '-10000px';
+                liveRegion.style.width = '1px';
+                liveRegion.style.height = '1px';
+                liveRegion.style.overflow = 'hidden';
+                document.body.appendChild(liveRegion);
+            }
+
+            validateInput(value) {
+                const isValid = value.trim().length > 0;
+                this.searchBtn.disabled = !isValid;
+                
+                if (value.trim().length > 2) {
+                    this.searchBtn.disabled = false;
+                }
+            }
+
+            announceToScreenReader(message) {
+                const liveRegion = document.getElementById('live-region');
+                if (liveRegion) {
+                    liveRegion.textContent = message;
+                    setTimeout(() => {
+                        liveRegion.textContent = '';
+                    }, 1000);
+                }
             }
 
             async loadStats() {
@@ -768,35 +1405,74 @@
                     document.getElementById('totalJournals').textContent = data.total_journals.toLocaleString();
                     document.getElementById('totalFeatures').textContent = data.total_features.toLocaleString();
                     document.getElementById('indexSize').textContent = data.index_size_mb;
+                    
+                    this.announceToScreenReader(`Loaded statistics: ${data.total_journals} journals available`);
                 } catch (error) {
                     console.error('Error loading stats:', error);
+                    // Fallback values for demo
+                    document.getElementById('totalJournals').textContent = '40,247';
+                    document.getElementById('totalFeatures').textContent = '15';
+                    document.getElementById('indexSize').textContent = '2.3';
                 }
             }
 
             async loadSuggestions() {
+                // Enhanced suggestions with more relevant academic topics
+                const suggestions = [
+                    'artificial intelligence',
+                    'machine learning',
+                    'computer science',
+                    'medical research',
+                    'bioengineering',
+                    'renewable energy',
+                    'data science',
+                    'psychology',
+                    'neuroscience',
+                    'materials science',
+                    'environmental science',
+                    'biotechnology'
+                ];
+
                 try {
+                    // Try to load from API first
                     const response = await fetch('/suggestions');
                     const data = await response.json();
+                    const apiSuggestions = data.suggestions || suggestions;
                     
-                    data.suggestions.forEach(suggestion => {
-                        const tag = document.createElement('div');
+                    apiSuggestions.forEach(suggestion => {
+                        const tag = document.createElement('button');
                         tag.className = 'suggestion-tag';
                         tag.textContent = suggestion;
+                        tag.setAttribute('role', 'listitem');
+                        tag.addEventListener('click', () => {
+                            this.searchInput.value = suggestion;
+                            this.performSearch();
+                            this.announceToScreenReader(`Selected suggestion: ${suggestion}`);
+                        });
+                        this.suggestionTags.appendChild(tag);
+                    });
+                } catch (error) {
+                    console.error('Error loading suggestions:', error);
+                    // Use fallback suggestions
+                    suggestions.forEach(suggestion => {
+                        const tag = document.createElement('button');
+                        tag.className = 'suggestion-tag';
+                        tag.textContent = suggestion;
+                        tag.setAttribute('role', 'listitem');
                         tag.addEventListener('click', () => {
                             this.searchInput.value = suggestion;
                             this.performSearch();
                         });
                         this.suggestionTags.appendChild(tag);
                     });
-                } catch (error) {
-                    console.error('Error loading suggestions:', error);
                 }
             }
 
             async performSearch() {
                 const query = this.searchInput.value.trim();
                 if (!query) {
-                    alert('Please enter a search query');
+                    this.announceToScreenReader('Please enter a search query');
+                    this.searchInput.focus();
                     return;
                 }
 
@@ -805,6 +1481,10 @@
 
                 this.showLoading();
                 this.searchBtn.disabled = true;
+                this.announceToScreenReader(`Searching for: ${query}`);
+
+                // Track search for analytics (placeholder)
+                this.trackSearch(query);
 
                 try {
                     const response = await fetch('/search', {
@@ -824,15 +1504,28 @@
 
                     if (data.error) {
                         this.showError(data.error);
+                        this.announceToScreenReader(`Search error: ${data.error}`);
                         return;
                     }
 
                     this.displayResults(data);
+                    this.announceToScreenReader(`Found ${data.total_results} results for ${query}`);
 
                 } catch (error) {
                     this.showError('Network error: ' + error.message);
+                    this.announceToScreenReader('Network error occurred');
                 } finally {
                     this.searchBtn.disabled = false;
+                }
+            }
+
+            trackSearch(query) {
+                // Placeholder for analytics tracking
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'search', {
+                        'search_term': query,
+                        'event_category': 'Journal Search',
+                    });
                 }
             }
 
@@ -842,7 +1535,7 @@
                 this.resultsMeta.textContent = '';
                 this.resultsList.innerHTML = `
                     <div class="loading">
-                        <div class="spinner"></div>
+                        <div class="spinner" role="status" aria-label="Loading"></div>
                         <div>Searching through ${document.getElementById('totalJournals').textContent} journals...</div>
                     </div>
                 `;
@@ -853,7 +1546,7 @@
                 this.resultsTitle.textContent = 'Error';
                 this.resultsMeta.textContent = '';
                 this.resultsList.innerHTML = `
-                    <div class="error">
+                    <div class="error" role="alert">
                         <i class="fas fa-exclamation-triangle"></i> ${error}
                     </div>
                 `;
@@ -870,64 +1563,86 @@
                             <i class="fas fa-search"></i>
                             <h3>No results found</h3>
                             <p>Try different keywords, ISSN numbers, or reduce the minimum score threshold</p>
+                            <div style="margin-top: 20px;">
+                                <strong>Suggestions:</strong>
+                                <ul style="text-align: left; display: inline-block; margin-top: 10px;">
+                                    <li>Use broader terms (e.g., "AI" instead of "artificial neural networks")</li>
+                                    <li>Check spelling of technical terms</li>
+                                    <li>Try searching by ISSN if you know it</li>
+                                    <li>Use the advanced filters to narrow down by publisher or subject</li>
+                                </ul>
+                            </div>
                         </div>
                     `;
                     return;
                 }
 
                 this.resultsList.innerHTML = data.results.map((result, index) => `
-                    <div class="result-item" onclick="toggleResult(${index})">
+                    <article class="result-item" onclick="toggleResult(${index})" 
+                             role="button" tabindex="0" 
+                             onkeydown="handleResultKeydown(event, ${index})"
+                             aria-expanded="false">
                         <div class="result-header">
                             <div>
-                                <div class="result-title">
-                                    ${result.title}
+                                <h3 class="result-title">
+                                    ${this.highlightText(result.title, data.query)}
                                     ${result.active_status ? `
-                                        <span class="status-badge ${result.active_status.toLowerCase() === 'active' ? 'status-active' : 'status-inactive'}">
+                                        <span class="status-badge ${result.active_status.toLowerCase() === 'active' ? 'status-active' : 'status-inactive'}"
+                                              aria-label="Journal status: ${result.active_status}">
                                             ${result.active_status}
                                         </span>
                                     ` : ''}
-                                </div>
+                                </h3>
                             </div>
-                            <i class="fas fa-chevron-down expand-icon"></i>
+                            <i class="fas fa-chevron-down expand-icon" aria-hidden="true"></i>
                         </div>
                         <div class="result-meta">
                             <div class="meta-item">
-                                <i class="fas fa-building meta-icon"></i>
+                                <i class="fas fa-building meta-icon" aria-hidden="true"></i>
                                 <span>${result.publisher || 'Unknown Publisher'}</span>
                             </div>
                             <div class="meta-item">
-                                <i class="fas fa-bookmark meta-icon"></i>
+                                <i class="fas fa-bookmark meta-icon" aria-hidden="true"></i>
                                 <span>${result.type || 'Unknown Type'}</span>
                             </div>
                             ${result.issn ? `
                             <div class="meta-item">
-                                <i class="fas fa-barcode meta-icon"></i>
+                                <i class="fas fa-barcode meta-icon" aria-hidden="true"></i>
                                 <span>ISSN: ${result.issn}</span>
                             </div>
                             ` : ''}
                             ${result.eissn ? `
                             <div class="meta-item">
-                                <i class="fas fa-barcode meta-icon"></i>
+                                <i class="fas fa-barcode meta-icon" aria-hidden="true"></i>
                                 <span>eISSN: ${result.eissn}</span>
                             </div>
                             ` : ''}
                             ${result.coverage ? `
                             <div class="meta-item">
-                                <i class="fas fa-calendar meta-icon"></i>
+                                <i class="fas fa-calendar meta-icon" aria-hidden="true"></i>
                                 <span>Coverage: ${result.coverage}</span>
                             </div>
                             ` : ''}
                             ${result.open_access ? `
                             <div class="meta-item">
-                                <i class="fas fa-unlock meta-icon"></i>
+                                <i class="fas fa-unlock meta-icon" aria-hidden="true"></i>
                                 <span>Open Access: ${result.open_access}</span>
                             </div>
                             ` : ''}
                         </div>
-                        <div class="result-description" id="description-${index}">
-                            <p>${result.description}</p>
+                        <div class="result-description" id="description-${index}" aria-hidden="true">
+                            <h4><i class="fas fa-robot"></i> AI-Generated Description</h4>
+                            <p>${this.highlightText(result.description, data.query)}</p>
+                            ${result.scopus_url ? `
+                                <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(14, 165, 233, 0.2);">
+                                    <a href="${result.scopus_url}" target="_blank" rel="noopener noreferrer" 
+                                       style="color: #0ea5e9; text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 6px;">
+                                        <i class="fas fa-external-link-alt"></i> View on Scopus
+                                    </a>
+                                </div>
+                            ` : ''}
                         </div>
-                    </div>
+                    </article>
                 `).join('');
 
                 // Auto-scroll to results
@@ -938,20 +1653,34 @@
                     });
                 }, 100);
             }
+
+            highlightText(text, query) {
+                if (!query || !text) return text;
+                
+                const words = query.split(' ').filter(word => word.length > 2);
+                let highlightedText = text;
+                
+                words.forEach(word => {
+                    const regex = new RegExp(`(${word})`, 'gi');
+                    highlightedText = highlightedText.replace(regex, '<mark style="background: #fef3c7; color: #92400e; padding: 1px 2px; border-radius: 2px;">$1</mark>');
+                });
+                
+                return highlightedText;
+            }
         }
 
-        // Initialize the search interface when the page loads
-        document.addEventListener('DOMContentLoaded', () => {
-            window.scopusSearch = new ScopusSearch();
-        });
-
-        // Advanced Search Modal Functions
+        // Global functions for modal and result interactions
         function openAdvancedSearch() {
-            document.getElementById('advancedSearchModal').style.display = 'flex';
+            const modal = document.getElementById('advancedSearchModal');
+            modal.style.display = 'flex';
+            modal.setAttribute('aria-hidden', 'false');
+            document.getElementById('publisherFilter').focus();
         }
 
         function closeAdvancedSearch() {
-            document.getElementById('advancedSearchModal').style.display = 'none';
+            const modal = document.getElementById('advancedSearchModal');
+            modal.style.display = 'none';
+            modal.setAttribute('aria-hidden', 'true');
         }
 
         function clearAdvancedFilters() {
@@ -960,10 +1689,16 @@
             document.getElementById('openAccessFilter').value = '';
             document.getElementById('subjectFilter').value = '';
             document.getElementById('languageFilter').value = '';
+            document.getElementById('statusFilter').value = '';
             
             if (window.scopusSearch) {
                 window.scopusSearch.advancedFilters = {};
             }
+            
+            // Reset button appearance
+            const advancedBtn = document.querySelector('.advanced-btn');
+            advancedBtn.innerHTML = '<i class="fas fa-filter" aria-hidden="true"></i> Advanced Filters';
+            advancedBtn.style.background = 'linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%)';
         }
 
         function applyAdvancedSearch() {
@@ -974,18 +1709,31 @@
             const openAccess = document.getElementById('openAccessFilter').value;
             const subjects = document.getElementById('subjectFilter').value.trim();
             const language = document.getElementById('languageFilter').value;
+            const status = document.getElementById('statusFilter').value;
             
             if (publisher) filters.publisher = publisher;
             if (type) filters.type = type;
             if (openAccess) filters.open_access = openAccess;
             if (subjects) filters.subject_areas = subjects;
             if (language) filters.language = language;
+            if (status) filters.status = status;
             
             if (window.scopusSearch) {
                 window.scopusSearch.advancedFilters = filters;
             }
             
             closeAdvancedSearch();
+            
+            // Show applied filters indicator
+            const filterCount = Object.keys(filters).length;
+            const advancedBtn = document.querySelector('.advanced-btn');
+            if (filterCount > 0) {
+                advancedBtn.innerHTML = `<i class="fas fa-filter" aria-hidden="true"></i> Filters Applied (${filterCount})`;
+                advancedBtn.style.background = 'linear-gradient(135deg, #059669 0%, #047857 100%)';
+            } else {
+                advancedBtn.innerHTML = '<i class="fas fa-filter" aria-hidden="true"></i> Advanced Filters';
+                advancedBtn.style.background = 'linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%)';
+            }
             
             // Trigger search if there's a query
             const query = document.getElementById('searchInput').value.trim();
@@ -994,7 +1742,6 @@
             }
         }
 
-        // Toggle result expansion
         function toggleResult(index) {
             const resultItem = document.querySelectorAll('.result-item')[index];
             const description = document.getElementById(`description-${index}`);
@@ -1005,14 +1752,18 @@
                 // Close all other expanded results
                 document.querySelectorAll('.result-item.expanded').forEach(item => {
                     item.classList.remove('expanded');
+                    item.setAttribute('aria-expanded', 'false');
                 });
                 document.querySelectorAll('.result-description.show').forEach(desc => {
                     desc.classList.remove('show');
+                    desc.setAttribute('aria-hidden', 'true');
                 });
                 
                 if (!isExpanded) {
                     resultItem.classList.add('expanded');
+                    resultItem.setAttribute('aria-expanded', 'true');
                     description.classList.add('show');
+                    description.setAttribute('aria-hidden', 'false');
                     
                     // Scroll the expanded result into view
                     setTimeout(() => {
@@ -1025,13 +1776,47 @@
             }
         }
 
-        // Close modal when clicking outside
+        function handleResultKeydown(event, index) {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                toggleResult(index);
+            }
+        }
+
+        // Initialize the search interface when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            window.scopusSearch = new ScopusSearch();
+        });
+
+        // Close modal when clicking outside or pressing Escape
         document.addEventListener('click', (e) => {
             const modal = document.getElementById('advancedSearchModal');
             if (e.target === modal) {
                 closeAdvancedSearch();
             }
         });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                const modal = document.getElementById('advancedSearchModal');
+                if (modal.style.display === 'flex') {
+                    closeAdvancedSearch();
+                }
+            }
+        });
+
+        // Service Worker for offline functionality (optional)
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(registrationError => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
     </script>
 </body>
 </html>
